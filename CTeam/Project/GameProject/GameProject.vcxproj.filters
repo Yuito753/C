@@ -11,9 +11,6 @@
     <ClCompile Include="Game\Enemy.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Bullet.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Map.cpp">
       <Filter>Game</Filter>
     </ClCompile>
@@ -34,9 +31,6 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Enemy.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Bullet.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Map.h">

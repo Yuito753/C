@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Bullet.h"
 #include "Map.h"
 
 Player::Player(const CVector2D& pos)
@@ -30,16 +29,7 @@ void Player::Update() {
 	//下に移動
 	if (HOLD(CInput::eDown))
 		m_pos.y += speed;
-
-	//マウスへのベクトル
-	CVector2D vec = CInput::GetMousePoint() - m_pos;
-	//回転値を逆算
-	m_ang = atan2(vec.x, vec.y);
-
-	if (PUSH(CInput::eMouseL)) {
-		Base::Add(new Bullet(eType_Player_Bullet, m_pos,m_ang, 4));
-
-	}
+	
 }
 void Player::Draw() {
 	m_img.SetPos(m_pos);

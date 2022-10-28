@@ -1,12 +1,11 @@
 //ゲーム係機能のインクルード
 #include <GLLibrary.h>
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
 
 #include "Base/Base.h"
 #include "Game/Player.h"
 #include "Game/Enemy.h"
-#include "Game/Bullet.h"
 #include "Game/Map.h"
 //--------------------------------------------
 //グローバル変数領域
