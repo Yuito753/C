@@ -68,7 +68,7 @@ void Init(void)
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	//ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
-	Base::Add(new Player(CVector2D(32 * 2, 32 * 33)));
+	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//ìGÇÃê∂ê¨
 	Base::Add(new Enemy(CVector2D(32 * 31, 32 * 16)));
 	Base::Add(new Enemy(CVector2D(32 * 32, 32 * 16)));
