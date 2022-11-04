@@ -6,6 +6,11 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
 #include "Game/Enemy.h"
+#include "Game/Enemy2.h"
+#include "Game/Enemy3.h"
+#include "Game/Enemy4.h"
+#include "Game/Enemy5.h"
+#include "Game/Enemy6.h"
 #include "Game/Map.h"
 //--------------------------------------------
 //グローバル変数領域
@@ -64,19 +69,21 @@ void Init(void)
 	//画像読み込み
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy2.png"));
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy3.png"));
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy4.png"));
+	ADD_RESOURCE("Enemy2", CImage::CreateImage("Image/Enemy2.png"));
+	ADD_RESOURCE("Enemy3", CImage::CreateImage("Image/Enemy3.png"));
+	ADD_RESOURCE("Enemy4", CImage::CreateImage("Image/Enemy4.png"));
+	ADD_RESOURCE("Enemy5", CImage::CreateImage("Image/Enemy5.png"));
+	ADD_RESOURCE("Enemy6", CImage::CreateImage("Image/Enemy6.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	//プレイヤーの生成
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//敵の生成
 	Base::Add(new Enemy(CVector2D(32 * 31, 32 * 16)));
-	Base::Add(new Enemy(CVector2D(32 * 32, 32 * 16)));
-	Base::Add(new Enemy(CVector2D(32 * 33, 32 * 16)));
-	Base::Add(new Enemy(CVector2D(32 * 36, 32 * 16)));
-	Base::Add(new Enemy(CVector2D(32 * 37, 32 * 16)));
-	Base::Add(new Enemy(CVector2D(32 * 38, 32 * 16)));
+	Base::Add(new Enemy2(CVector2D(32 * 32, 32 * 16)));
+	Base::Add(new Enemy3(CVector2D(32 * 33, 32 * 16)));
+	Base::Add(new Enemy4(CVector2D(32 * 36, 32 * 16)));
+	Base::Add(new Enemy5(CVector2D(32 * 37, 32 * 16)));
+	Base::Add(new Enemy6(CVector2D(32 * 38, 32 * 16)));
 	//マップの生成
 	Base::Add(new Map());
 
