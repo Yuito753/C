@@ -64,8 +64,9 @@ void Init(void)
 	//âÊëúì«Ç›çûÇ›
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
-	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
-	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy2.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy3.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy4.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	//ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
