@@ -87,8 +87,8 @@ void Init(void)
 	//ƒ}ƒbƒv‚Ì¶¬
 	Base::Add(new Map());
 
-
-
+	//BGM‚Ì¶¬
+	SOUND("GAME_BGM")->Load("Sound/GAME_BGM.wav");
 
 
 
