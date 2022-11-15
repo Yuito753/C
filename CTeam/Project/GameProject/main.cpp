@@ -12,6 +12,7 @@
 #include "Game/Enemy5.h"
 #include "Game/Enemy6.h"
 #include "Game/Map.h"
+#include "Game/UI.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
