@@ -1,3 +1,3 @@
 #include "GameData.h"
-int GameData::s_score = 0;
+int GameData::s_score = 5555;
 
