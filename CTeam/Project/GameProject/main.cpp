@@ -29,7 +29,7 @@ void MainLoop(void) {
 	Base::UpdateAll();
 	Base::CollisionAll();
 	Base::DrawAll();
-
+	Base::Add(new UI());
 
 }
 void Init(void)
