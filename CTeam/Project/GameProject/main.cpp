@@ -91,9 +91,7 @@ void Init(void)
 	//BGM‚Ì¶¬
 	SOUND("BGM_Game")->Load("Sound/BGM/BGM_Game.wav");
 
-
-
-
+	
 
 }
 
