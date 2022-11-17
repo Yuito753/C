@@ -29,10 +29,13 @@
     <ClCompile Include="Game\Enemy6.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\UI.cpp">
+    <ClCompile Include="GameData.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="GameData.cpp">
+    <ClCompile Include="Game\Dijkstra.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\UI.cpp">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,10 +75,13 @@
     <ClInclude Include="Game\Enemy6.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\UI.h">
+    <ClInclude Include="GameData.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="GameData.h">
+    <ClInclude Include="Game\Dijkstra.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\UI.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

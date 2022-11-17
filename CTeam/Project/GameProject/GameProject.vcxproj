@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="Game\Dijkstra.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Enemy2.cpp" />
     <ClCompile Include="Game\Enemy3.cpp" />
@@ -27,6 +28,7 @@
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="Game\Dijkstra.h" />
     <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\Enemy2.h" />
     <ClInclude Include="Game\Enemy3.h" />
