@@ -3,7 +3,7 @@
 
 
 
-Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
+Title::Title() :Base(eType_Scene)  {
 
 
 
