@@ -13,6 +13,8 @@ Player::Player(const CVector2D& pos)
 	//”¼Œa
 	m_rad = 16;
 	WPcount = 0;
+	
+	
 }
 void Player::Update() {
 	m_pos_old = m_pos;
@@ -31,6 +33,7 @@ void Player::Update() {
 		m_pos.y += speed;
 	if (WPcount > 0)
 		WPcount--;
+
 
 }
 void Player::Draw() {
