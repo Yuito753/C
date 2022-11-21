@@ -13,6 +13,8 @@
 #include "Game/Enemy6.h"
 #include "Game/Map.h"
 #include "Game/UI.h"
+#include "Game/AnimData.h"
+
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
