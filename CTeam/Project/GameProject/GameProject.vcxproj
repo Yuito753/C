@@ -15,11 +15,6 @@
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="Game\Dijkstra.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
-    <ClCompile Include="Game\Enemy2.cpp" />
-    <ClCompile Include="Game\Enemy3.cpp" />
-    <ClCompile Include="Game\Enemy4.cpp" />
-    <ClCompile Include="Game\Enemy5.cpp" />
-    <ClCompile Include="Game\Enemy6.cpp" />
     <ClCompile Include="Game\Map.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\UI.cpp" />
@@ -30,11 +25,6 @@
     <ClInclude Include="GameData.h" />
     <ClInclude Include="Game\Dijkstra.h" />
     <ClInclude Include="Game\Enemy.h" />
-    <ClInclude Include="Game\Enemy2.h" />
-    <ClInclude Include="Game\Enemy3.h" />
-    <ClInclude Include="Game\Enemy4.h" />
-    <ClInclude Include="Game\Enemy5.h" />
-    <ClInclude Include="Game\Enemy6.h" />
     <ClInclude Include="Game\Map.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\UI.h" />

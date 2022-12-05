@@ -1,8 +1,8 @@
-#include "Enemy.h"
-Enemy::Enemy(const CVector2D& pos)
+#include "Enemy.h":
+Enemy::Enemy(const char*name,const CVector2D& pos)
 	:Base(eType_Enemy) {
 
-	m_img = COPY_RESOURCE("Enemy", CImage);
+	m_img = COPY_RESOURCE(name, CImage);
 	m_pos = pos;
 	//中心を設定
 	m_img.SetCenter(16, 16);
@@ -10,27 +10,103 @@ Enemy::Enemy(const CVector2D& pos)
 	m_rect = CRect(-16, -16, 16, 16);
 	//半径
 	m_rad = 16;
+	m_state = estate_randamu;
+	m_cnt = 0;
+	m_direction = eunder;
 }
 void Enemy::Update() {
+	switch (m_state) {
+	case estate_randamu:
+		randamu();
+		break;
+	case estate_tuiseki:
+		tuiseki();
+		break;
+	case estate_nigeru:
+		nigeru();
+		break;
+	}
+	
+}
+void Enemy::Draw() {
+	m_img.SetPos(m_pos);
+	m_img.Draw();
+}
+void Enemy::Collision(Base* b) {
 
-	//カウントアップ
+}
+
+void Enemy::randamu()
+{
+	m_cnt++;
+	int t;
+	Base* b = Base::FindObject(eType_Field);
+	if (Map* m = dynamic_cast<Map*>(b)) {
+		switch (m_direction) {
+		case eup:
+			t = m->GetTip(m_pos + CVector2D(0, -32 + 16));
+			if (t != 0) {
+				m_direction = rand()%4;
+			}
+			else {
+				m_pos.y -= 1;
+			}
+			break;
+		case eright:
+			t = m->GetTip(m_pos + CVector2D(32-16, 0));
+			if (t != 0) {
+				m_direction = rand()%4;
+			}
+			else {
+				m_pos.x += 1;
+			}
+			
+			break;
+		case eleft:
+			t = m->GetTip(m_pos + CVector2D(-32 + 16, 0));
+			if (t != 0) {
+				m_direction = rand()%4;
+			}
+			else {
+				m_pos.x -= 1;
+			}
+			break;
+		case eunder:
+			t = m->GetTip(m_pos+CVector2D(0,32-16));
+			if (t != 0) {
+				m_direction = rand()%4;
+			}
+			else {
+				m_pos.y += 1;
+			}
+			
+			break;
+		}
+	}
+	
+	if (m_cnt > 180) {
+		//m_state = estate_tuiseki;
+	}
+}
+
+void Enemy::tuiseki()
+{//カウントアップ
 	m_cnt++;
 	//プレイヤーを取得
 	Base* b = Base::FindObject(eType_Player);
 	//プレイヤーが居れば
 	if (b) {
-		//ターゲットへのベクトル
-		CVector2D vec = b->m_pos - m_pos;
-		m_ang = atan2(vec.x, vec.y);
-		
+
+
+
 		//マウスクリックで目的地変更
-		if (PUSH(CInput::eMouseL)) {
-			CVector2D mouse_pos = CInput::GetMousePoint();
+		if (m_cnt % 120 == 0) {
+
 			if (Map* m = dynamic_cast<Map*>(Base::FindObject(eType_Field))) {
 				//経路探索　対象マップ、自分の座標、目標の座標
-				m_path.FindShortestPath(m, m_pos, mouse_pos);
+				m_path.FindShortestPath(m, m_pos, b->m_pos);
 				//経路データ配列の添字に使用
-				m_path_idx = 0;
+				m_path_idx = 2;
 			}
 		}
 		const float speed = 4;
@@ -50,13 +126,10 @@ void Enemy::Update() {
 				m_path_idx++;
 			}
 		}
-		
+
 	}
 }
-void Enemy::Draw() {
-	m_img.SetPos(m_pos);
-	m_img.Draw();
-}
-void Enemy::Collision(Base* b) {
 
+void Enemy::nigeru()
+{
 }

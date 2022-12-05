@@ -6,11 +6,6 @@
 #include "Base/Base.h"
 #include "Game/Player.h"
 #include "Game/Enemy.h"
-#include "Game/Enemy2.h"
-#include "Game/Enemy3.h"
-#include "Game/Enemy4.h"
-#include "Game/Enemy5.h"
-#include "Game/Enemy6.h"
 #include "Game/Map.h"
 #include "Game/UI.h"
 //--------------------------------------------
@@ -29,7 +24,6 @@ void MainLoop(void) {
 	Base::UpdateAll();
 	Base::CollisionAll();
 	Base::DrawAll();
-	Base::Add(new UI());
 
 }
 void Init(void)
@@ -79,14 +73,17 @@ void Init(void)
 	//プレイヤーの生成
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//敵の生成
-	Base::Add(new Enemy(CVector2D(32 * 31, 32 * 16)));
-	Base::Add(new Enemy2(CVector2D(32 * 32, 32 * 16)));
-	Base::Add(new Enemy3(CVector2D(32 * 33, 32 * 16)));
-	Base::Add(new Enemy4(CVector2D(32 * 36, 32 * 16)));
-	Base::Add(new Enemy5(CVector2D(32 * 37, 32 * 16)));
-	Base::Add(new Enemy6(CVector2D(32 * 38, 32 * 16)));
+	Base::Add(new Enemy("Enemy",CVector2D(32 * 32, 32 * 19)));
+	Base::Add(new Enemy("Enemy4", CVector2D(32 * 34, 32 * 19)));
+	Base::Add(new Enemy("Enemy2",CVector2D(32 * 32, 32 * 16)));
+	Base::Add(new Enemy("Enemy3",CVector2D(32 * 33, 32 * 16)));
+	Base::Add(new Enemy("Enemy5",CVector2D(32 * 36, 32 * 16)));
+	Base::Add(new Enemy("Enemy6",CVector2D(32 * 37, 32 * 16)));
+	
 	//マップの生成
 	Base::Add(new Map());
+
+	Base::Add(new UI());
 
 	//BGMの生成
 	SOUND("BGM_Game")->Load("Sound/BGM/BGM_Game.wav");
