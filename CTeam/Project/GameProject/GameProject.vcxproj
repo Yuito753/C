@@ -13,21 +13,25 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="Game\AnimData.cpp" />
     <ClCompile Include="Game\Dijkstra.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Map.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\UI.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="Game\AnimData.h" />
     <ClInclude Include="Game\Dijkstra.h" />
     <ClInclude Include="Game\Enemy.h" />
     <ClInclude Include="Game\Map.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\UI.h" />
+    <ClInclude Include="Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE2CE3B1-49BF-46A5-9DB1-9BD5B52FE1A0}</ProjectGuid>

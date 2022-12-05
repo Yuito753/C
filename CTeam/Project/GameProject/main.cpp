@@ -8,6 +8,8 @@
 #include "Game/Enemy.h"
 #include "Game/Map.h"
 #include "Game/UI.h"
+#include "Game/AnimData.h"
+
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -70,6 +72,7 @@ void Init(void)
 	ADD_RESOURCE("Enemy5", CImage::CreateImage("Image/Enemy5.png"));
 	ADD_RESOURCE("Enemy6", CImage::CreateImage("Image/Enemy6.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	//プレイヤーの生成
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//敵の生成
