@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="Game\AnimData.cpp" />
     <ClCompile Include="Game\Dijkstra.cpp" />
@@ -24,6 +25,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="Game\AnimData.h" />
     <ClInclude Include="Game\Dijkstra.h" />
