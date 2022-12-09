@@ -15,6 +15,8 @@ Enemy::Enemy(const char*name,const CVector2D& pos)
 	m_direction = eunder;
 }
 void Enemy::Update() {
+	
+	
 	switch (m_state) {
 	case estate_randamu:
 		randamu();
@@ -33,11 +35,14 @@ void Enemy::Draw() {
 	m_img.Draw();
 }
 void Enemy::Collision(Base* b) {
+	
+	}
 
-}
+
 
 void Enemy::randamu()
 {
+	
 	m_cnt++;
 	int t;
 	Base* b = Base::FindObject(eType_Field);
@@ -84,13 +89,15 @@ void Enemy::randamu()
 		}
 	}
 	
-	if (m_cnt > 180) {
-		//m_state = estate_tuiseki;
+	if (m_cnt > 480){
+		m_state = estate_tuiseki;
+		
 	}
 }
 
 void Enemy::tuiseki()
 {//カウントアップ
+	
 	m_cnt++;
 	//プレイヤーを取得
 	Base* b = Base::FindObject(eType_Player);
@@ -109,7 +116,7 @@ void Enemy::tuiseki()
 				m_path_idx = 2;
 			}
 		}
-		const float speed = 4;
+		const float speed = 2;
 		//現在の添字　< パスの数なら次の目標地点へ移動
 		if (m_path_idx < m_path.GetPathSize()) {
 			//次の目標地点へのベクトル
@@ -128,7 +135,8 @@ void Enemy::tuiseki()
 		}
 
 	}
-}
+	
+	}
 
 void Enemy::nigeru()
 {

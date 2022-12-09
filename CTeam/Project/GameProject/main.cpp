@@ -76,8 +76,8 @@ void Init(void)
 	//ƒvƒŒƒCƒ„[‚Ì¶¬
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//“G‚Ì¶¬
-	Base::Add(new Enemy("Enemy",CVector2D(32 * 32, 32 * 19)));
-	Base::Add(new Enemy("Enemy4", CVector2D(32 * 34, 32 * 19)));
+	Base::Add(new Enemy("Enemy",CVector2D(32 * 30, 32 * 16)));
+	Base::Add(new Enemy("Enemy4", CVector2D(32 * 31, 32 * 16)));
 	Base::Add(new Enemy("Enemy2",CVector2D(32 * 32, 32 * 16)));
 	Base::Add(new Enemy("Enemy3",CVector2D(32 * 33, 32 * 16)));
 	Base::Add(new Enemy("Enemy5",CVector2D(32 * 36, 32 * 16)));
