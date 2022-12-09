@@ -26,7 +26,10 @@ Game::~Game()
 
 void Game:: Update()
 {
-
+	Base* b = Base::FindObject(eType_Field);
+	if (Map* m = dynamic_cast<Map*>(b)) {
+		printf("%d\n", m->item);
+	}
 }
 
 void Game:: Draw()
