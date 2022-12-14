@@ -6,6 +6,8 @@ UI::UI():Base(eType_UI) {
 }
 void UI::Draw()
 {
+	
+
 	int score = GameData::s_score;
 	for (int i = 0; i < 8; i++, score /= 10) {
 		int s = score % 10;
