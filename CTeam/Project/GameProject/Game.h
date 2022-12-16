@@ -7,4 +7,5 @@ public:
 	~Game();
 	void Update();
 	void Draw();
+	static int point;
 };
