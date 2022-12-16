@@ -10,6 +10,7 @@
 class Map : public Base {
 private:
 	CImage m_img;
+	int stagedata[MAP_HEIGHT][MAP_WIDTH];
 public:
 	int item;
 	Map();

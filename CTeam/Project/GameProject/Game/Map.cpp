@@ -14,7 +14,7 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 	{ 1<<16|10<<8|39,0,0,1,1,0,1,0,1,0,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1<<16|10<<8|0},
 	{ 1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1},
 	{ 1,0,1,0,1,1,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,0,0,0,0,0,0,1,0,1,0,1,1,0,1,1},
-	{ 1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1},
+	{ 1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,4,0,0,0,0,0,0,0,4,0,1,0,0,0,0,1,1},
 	{ 1,0,1,1,1,1,1,0,1,1,0,1,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,1,1,0,1,1},
 	{ 1,0,0,0,0,0,1,0,0,1,0,1,0,1,0,0,0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1},
 	{ 1,0,1,1,1,0,1,1,0,1,0,1,0,1,1,1,0,1,0,1,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,1,0,1},
@@ -32,6 +32,7 @@ Map::Map() : Base(eType_Field) {
 	//‰æ‘œ•¡»
 	m_img = COPY_RESOURCE("MapTip", CImage);
 	item = 0;
+	memcpy(stagedata, stage1data, sizeof(stage1data));
 }
 
 void Map::Draw() {
@@ -40,8 +41,8 @@ void Map::Draw() {
 	for (int i = 0; i < MAP_HEIGHT; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			//•\¦‚µ‚È‚¢§Œä
-			if (stage1data[i][j] ==0 || stage1data[i][j]>4)continue;
-			int t = stage1data[i][j];
+			if (stagedata[i][j] ==0 || stagedata[i][j]>4)continue;
+			int t = stagedata[i][j];
 			if (t == 3||t == 4) item++;
 			//‰æ‘œØ‚è”²‚«
 			m_img.SetRect(32 * t, 0, 32 * t + 32, 32);
@@ -82,10 +83,10 @@ void Map::SetTip(const CVector2D& pos, int t)
 	if (raw < 0) raw = 0;
 	if (raw > MAP_HEIGHT - 1) raw = MAP_HEIGHT - 1;
 
-	stage1data[raw][col] = t;
+	stagedata[raw][col] = t;
 }
     int Map::GetTip(int col, int raw) {
-	return stage1data[raw][col];
+	return stagedata[raw][col];
 }
 
     int Map::CollisionMap(const CVector2D& pos) {

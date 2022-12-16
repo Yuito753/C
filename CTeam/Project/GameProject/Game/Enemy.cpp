@@ -50,7 +50,7 @@ void Enemy::randamu()
 		switch (m_direction) {
 		case eup:
 			t = m->GetTip(m_pos + CVector2D(0, -32 + 16));
-			if (t != 0) {
+			if (t == 1) {
 				m_direction = rand()%4;
 			}
 			else {
@@ -59,7 +59,7 @@ void Enemy::randamu()
 			break;
 		case eright:
 			t = m->GetTip(m_pos + CVector2D(32-16, 0));
-			if (t != 0) {
+			if (t == 1) {
 				m_direction = rand()%4;
 			}
 			else {
@@ -69,7 +69,7 @@ void Enemy::randamu()
 			break;
 		case eleft:
 			t = m->GetTip(m_pos + CVector2D(-32 + 16, 0));
-			if (t != 0) {
+			if (t == 1) {
 				m_direction = rand()%4;
 			}
 			else {
@@ -78,7 +78,7 @@ void Enemy::randamu()
 			break;
 		case eunder:
 			t = m->GetTip(m_pos+CVector2D(0,32-16));
-			if (t != 0) {
+			if (t == 1) {
 				m_direction = rand()%4;
 			}
 			else {

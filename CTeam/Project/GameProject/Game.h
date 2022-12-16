@@ -2,6 +2,7 @@
 #include"Base/Base.h"
 
 class Game :public Base {
+	CImage GameClear_text;
 public:
 	Game();
 	~Game();

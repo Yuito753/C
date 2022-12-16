@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Map.h"
+#include"GameData.h"
 
 Player::Player(const CVector2D& pos)
 	:Base(eType_Player) {
@@ -51,9 +52,11 @@ void Player::Collision(Base* b) {
 			int t = m->GetTip(m_pos);
 			if (t != 0) {
 				if (t == 3) {
+					 GameData::s_score += 100;
 					m->SetTip(m_pos, 0);
 				}
 				else if (t == 4) {
+					GameData::s_score += 200;
 					m->SetTip(m_pos, 0);
 				}
 				else if (t & (1 << 16)) {
