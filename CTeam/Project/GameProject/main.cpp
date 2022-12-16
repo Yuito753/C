@@ -61,7 +61,7 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//画像読み込み
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player1.png"));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 	ADD_RESOURCE("Enemy2", CImage::CreateImage("Image/Enemy2.png"));
 	ADD_RESOURCE("Enemy3", CImage::CreateImage("Image/Enemy3.png"));
@@ -70,6 +70,7 @@ void Init(void)
 	ADD_RESOURCE("Enemy6", CImage::CreateImage("Image/Enemy6.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	//プレイヤーの生成
 	Base::Add(new Title());
 

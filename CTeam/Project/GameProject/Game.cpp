@@ -3,9 +3,10 @@
 #include "Game/Enemy.h"
 #include "Game/Map.h"
 #include "Game/UI.h"
-#include "Game/GameData.h"
+#include"Title/Title.h"
 
 Game::Game() :Base(eType_Scene) {
+	GameClear_text = COPY_RESOURCE("GameClear", CImage);
 	Base::Add(new Player(CVector2D(32 * 2, 32 * 13)));
 	//ìGÇÃê∂ê¨
 	Base::Add(new Enemy("Enemy", CVector2D(32 * 32, 32 * 19)));
@@ -23,9 +24,6 @@ Game::Game() :Base(eType_Scene) {
 
 Game::~Game()
 {
-	Base::KillAll();
-	GameData::point[0] = 0;
-	GameData::point[1] = 0;
 }
 
 void Game:: Update()
@@ -35,6 +33,21 @@ void Game:: Update()
 
 void Game:: Draw()
 {
+	Base* b = Base::FindObject(eType_Field);
+	if (Map* m = dynamic_cast<Map*>(b)) {
+		printf("%d\n", m->item);
+		if (m->item == 0)
+		{
+			if (PUSH(CInput::eButton10)) {
+				SOUND("SE_Button2")->Play();
+				SetKill();
+				Base::KillAll();
+				Base::Add(new Title ());
+			}
+			GameClear_text.SetPos(100, 300);
+			GameClear_text.Draw();
+		}
+	}
 }
 
 
