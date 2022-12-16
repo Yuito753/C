@@ -3,6 +3,7 @@
 #include "GameData.h"
 UI::UI():Base(eType_UI) {
 	m_img.Load("Image/UI.png");
+
 }
 void UI::Draw()
 {
