@@ -34,8 +34,8 @@ void Title::Update()
 void Title::Draw()
 {
 
-	/*
-	m_title.Draw();
+	
+	//m_title.Draw();
 	//m_img.SetSize(1920, 1080);
-	m_img.Draw();*/
+	//m_img.Draw();
 }
