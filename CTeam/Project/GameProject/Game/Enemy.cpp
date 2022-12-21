@@ -90,6 +90,7 @@ void Enemy::randamu()
 	}
 	
 	if (m_cnt > 480){
+		m_cnt = 0;
 		m_state = estate_tuiseki;
 		
 	}
@@ -135,7 +136,12 @@ void Enemy::tuiseki()
 		}
 
 	}
-	
+
+	if (m_cnt > 480) {
+		m_cnt = 0;
+		m_state =estate_randamu;
+
+	}
 	}
 
 void Enemy::nigeru()
