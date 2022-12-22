@@ -46,6 +46,11 @@ void Player::Draw() {
 }
 void Player::Collision(Base* b) {
 	switch (b->m_type) {
+	case eType_Enemy:
+		if (Base::CollisionCircle(this, b)) {
+			SetKill();
+		}
+		break;
 	case eType_Field:
 		if (Map* m = dynamic_cast<Map*>(b)) {
 

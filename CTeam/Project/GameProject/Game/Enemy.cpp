@@ -99,7 +99,7 @@ void Enemy::randamu()
 void Enemy::tuiseki()
 {//カウントアップ
 	
-	m_cnt++;
+	
 	//プレイヤーを取得
 	Base* b = Base::FindObject(eType_Player);
 	//プレイヤーが居れば
@@ -136,7 +136,7 @@ void Enemy::tuiseki()
 		}
 
 	}
-
+	m_cnt++;
 	if (m_cnt > 480) {
 		m_cnt = 0;
 		m_state =estate_randamu;
