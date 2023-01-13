@@ -4,6 +4,7 @@
 class Title :public Base {
 private:
 	CImage m_img;
+	CImage m_img2;
 	CImage m_title_text;
 	CImage m_title;
 	

@@ -6,7 +6,7 @@
 Title::Title() :Base(eType_Scene)  {
 
 	m_img = COPY_RESOURCE("Title", CImage);
-	//m_title = COPY_RESOURCE("PACMAN2", CImage);
+	m_img2 = COPY_RESOURCE("PACMAN2", CImage);
 	
 
 
@@ -37,5 +37,5 @@ void Title::Draw()
 	
 	//m_title.Draw();
 	//m_img.SetSize(1920, 1080);
-	//m_img.Draw();
+	m_img2.Draw();
 }

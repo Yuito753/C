@@ -70,6 +70,7 @@ void Init(void)
 	ADD_RESOURCE("Enemy6", CImage::CreateImage("Image/Enemy6.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
+	ADD_RESOURCE("pacman", CImage::CreateImage("Image/pacman.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/GameClear.png"));
 	//ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	Base::Add(new Title());
