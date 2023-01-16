@@ -21,18 +21,34 @@ void Player::Update() {
 	m_pos_old = m_pos;
 	const float speed = 2.1;
 	//¶‚ÉˆÚ“®
-	if (HOLD(CInput::eLeft))
-		m_pos.x -= speed;
+	if (HOLD(CInput::eLeft)) {
+
+	m_pos.x -= speed;
+	m_ang = DtoR(0);
+
+	}
+		
 	//‰E‚ÉˆÚ“®
 	if (HOLD(CInput::eRight))
+		 {
 		m_pos.x += speed;
-	//ã‚ÉˆÚ“®
-	if (HOLD(CInput::eUp))
+		m_ang = DtoR(180);
 
-		m_pos.y -= speed;
+	}
+	//ã‚ÉˆÚ“®
+	if (HOLD(CInput::eUp)) {
+m_pos.y -= speed;
+m_ang = DtoR(270);
+
+	}
+
+		
 	//‰º‚ÉˆÚ“®
-	if (HOLD(CInput::eDown))
-		m_pos.y += speed;
+	if (HOLD(CInput::eDown)) {
+m_pos.y += speed;
+m_ang = DtoR(90);
+	}
+		
 	if (WPcount > 0)
 		WPcount--;
 
