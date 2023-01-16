@@ -89,7 +89,7 @@ void Enemy::randamu()
 		}
 	}
 	
-	if (m_cnt > 480){
+	if (m_cnt > 420){
 		m_cnt = 0;
 		m_state = estate_tuiseki;
 		
@@ -107,7 +107,7 @@ void Enemy::tuiseki()
 
 
 
-		//マウスクリックで目的地変更
+		
 		if (m_cnt % 120 == 0) {
 
 			if (Map* m = dynamic_cast<Map*>(Base::FindObject(eType_Field))) {
@@ -117,7 +117,7 @@ void Enemy::tuiseki()
 				m_path_idx = 2;
 			}
 		}
-		const float speed = 2;
+		const float speed = 2.2;
 		//現在の添字　< パスの数なら次の目標地点へ移動
 		if (m_path_idx < m_path.GetPathSize()) {
 			//次の目標地点へのベクトル
@@ -137,7 +137,7 @@ void Enemy::tuiseki()
 
 	}
 	m_cnt++;
-	if (m_cnt > 480) {
+	if (m_cnt > 420) {
 		m_cnt = 0;
 		m_state =estate_randamu;
 

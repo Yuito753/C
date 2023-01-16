@@ -4,9 +4,11 @@
 class Player : public Base {
 	CImage m_img;
 	int WPcount;
+	int mcount;
 public:
 	Player(const CVector2D& pos);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
+
 };

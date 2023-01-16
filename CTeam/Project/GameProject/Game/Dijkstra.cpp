@@ -11,6 +11,7 @@ Dijkstra::~Dijkstra()
 
 }
 
+
 bool  Dijkstra::_FindShortestPath(Map* map, int x, int y, unsigned char score)
 {
     //•Ç‚È‚ç’²‚×‚È‚¢

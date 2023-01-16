@@ -14,12 +14,12 @@ Player::Player(const CVector2D& pos)
 	//”¼Œa
 	m_rad = 16;
 	WPcount = 0;
-	
+	mcount = 0;
 	
 }
 void Player::Update() {
 	m_pos_old = m_pos;
-	const float speed = 3;
+	const float speed = 2.1;
 	//¶‚ÉˆÚ“®
 	if (HOLD(CInput::eLeft))
 		m_pos.x -= speed;
@@ -36,6 +36,8 @@ void Player::Update() {
 	if (WPcount > 0)
 		WPcount--;
 
+	if (mcount > 0)
+		mcount--;
 
 }
 void Player::Draw() {
@@ -48,9 +50,15 @@ void Player::Collision(Base* b) {
 	switch (b->m_type) {
 	case eType_Enemy:
 		if (Base::CollisionCircle(this, b)) {
-			SetKill();
+			
+			if (mcount > 0)
+				b->SetKill();
+			else
+				SetKill();
+
 		}
 		break;
+
 	case eType_Field:
 		if (Map* m = dynamic_cast<Map*>(b)) {
 
@@ -63,6 +71,8 @@ void Player::Collision(Base* b) {
 				else if (t == 4) {
 					GameData::s_score += 200;
 					m->SetTip(m_pos, 0);
+					mcount = 6 * 60;
+
 				}
 				else if (t & (1 << 16)) {
 					int x = t & 0xFF;
