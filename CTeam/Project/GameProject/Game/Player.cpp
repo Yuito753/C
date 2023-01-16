@@ -87,7 +87,7 @@ void Player::Collision(Base* b) {
 				else if (t == 4) {
 					GameData::s_score += 200;
 					m->SetTip(m_pos, 0);
-					mcount = 6 * 60;
+					mcount = 2 * 60;
 
 				}
 				else if (t & (1 << 16)) {

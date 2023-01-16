@@ -4,7 +4,7 @@
 
 
 Title::Title() :Base(eType_Scene)  {
-	//m_title = COPY_RESOURCE("Title_text", CImage);
+	
 	m_img = COPY_RESOURCE("Title", CImage);
 	m_img2 = COPY_RESOURCE("PACMAN2", CImage);
 	m_title = COPY_RESOURCE("pac", CImage);
